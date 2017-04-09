@@ -24,6 +24,13 @@ public class CustomDialog extends Dialog {
     private String mTitleString;
     private String mContentString;
 
+    /**
+     * 构造方法
+     * @param context
+     * @param layoutId 布局文件id
+     * @param confirmListener 点击确定对应的监听器
+     * @param cancelListener 点击取消对应的监听器
+     */
     public CustomDialog(Context context,int layoutId,OnConfirmListener confirmListener,OnCancleListener cancelListener) {
         super(context, R.style.MyDialog);
         mConfirmListener=confirmListener;
@@ -31,10 +38,12 @@ public class CustomDialog extends Dialog {
         mLayoutId=layoutId;
     }
 
+    //点击确定对应的监听器
     public interface OnConfirmListener {
         void onConfirm();
     }
 
+    //点击取消对应的监听器
     public interface OnCancleListener {
         void onCancle();
     }
